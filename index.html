@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Jamalee Qym Talento: Azure Administrator Associate (AZ-104) and BSIT student focused on Microsoft infrastructure and systems administration.">
+<title>Jamalee Qym Talento | Azure Administrator &amp; Systems Administration</title>
+<style>
+  :root {
+    --azure: #0078d4; --azure-dark: #004e8c; --azure-deep: #002f57;
+    --tint: #eff6fc; --text: #1b1a19; --muted: #575552; --line: #e1dfdd; --bg: #f7f9fb;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+  body { font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
+  a { color: var(--azure); }
+
+  nav { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  nav .in { max-width: 900px; margin: 0 auto; padding: 10px 24px; display: flex; justify-content: space-between; align-items: center; }
+  nav strong { font-weight: 600; }
+  .btn { display: inline-block; background: var(--azure); color: #fff; text-decoration: none; font-weight: 600; padding: 10px 22px; border-radius: 6px; transition: background .2s, transform .2s; }
+  .btn:hover { background: var(--azure-dark); transform: translateY(-1px); }
+  nav .btn { padding: 6px 16px; font-size: .9rem; }
+
+  .hero { background: linear-gradient(135deg, var(--azure-deep), var(--azure)); color: #fff; }
+  .hero .in { max-width: 900px; margin: 0 auto; padding: 64px 24px 56px; }
+  .eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: .8rem; opacity: .85; margin-bottom: 10px; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 600; line-height: 1.15; }
+  .hero .pitch { font-size: 1.15rem; max-width: 620px; margin: 16px 0 24px; opacity: .95; }
+  .hero .btn { background: #fff; color: var(--azure-dark); }
+  .hero .btn:hover { background: var(--tint); }
+  .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .badge { border: 1px solid rgba(255,255,255,.45); background: rgba(255,255,255,.12); padding: 4px 14px; border-radius: 999px; font-size: .88rem; }
+  .badge.next { border-style: dashed; opacity: .85; }
+
+  .stats { max-width: 900px; margin: -28px auto 0; padding: 0 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; position: relative; }
+  .stat { background: #fff; border-radius: 8px; padding: 16px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+  .stat b { display: block; font-size: 1.7rem; color: var(--azure); line-height: 1.2; }
+  .stat span { font-size: .85rem; color: var(--muted); }
+
+  main { max-width: 900px; margin: 0 auto; padding: 24px; }
+  section { background: #fff; border-radius: 8px; padding: 28px; margin-top: 20px; border-left: 4px solid var(--azure); box-shadow: 0 1px 4px rgba(0,0,0,.05); }
+  h2 { font-size: 1.25rem; font-weight: 600; margin-bottom: 4px; }
+  .sub { color: var(--muted); font-size: .92rem; margin-bottom: 18px; }
+  h3 { font-size: 1.02rem; font-weight: 600; }
+  .meta { color: var(--muted); font-size: .92rem; }
+
+  .timeline { list-style: none; border-left: 2px solid var(--line); margin-left: 6px; }
+  .timeline li { position: relative; padding: 0 0 20px 24px; }
+  .timeline li:last-child { padding-bottom: 0; }
+  .timeline li::before { content: ""; position: absolute; left: -8px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--azure); border: 3px solid #fff; box-shadow: 0 0 0 1px var(--azure); }
+  .timeline li.next::before { background: #fff; box-shadow: 0 0 0 1px var(--azure); border: 3px solid #fff; outline: 2px dashed var(--azure); outline-offset: -5px; }
+  .status { display: inline-block; background: #fff4ce; color: #6b5200; border: 1px solid #f3e0a0; padding: 0 10px; border-radius: 999px; font-size: .78rem; margin-right: 6px; }
+  .status.done { background: #dff6dd; color: #0b5a0b; border-color: #b7e3b3; }
+
+  .group { margin-bottom: 18px; }
+  .group:last-child { margin-bottom: 0; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .tags span { background: var(--tint); color: var(--azure-dark); border: 1px solid #c7e0f4; padding: 4px 12px; border-radius: 999px; font-size: .9rem; }
+  .tags span.cert::after { content: " \2713"; font-weight: 700; }
+  .legend { font-size: .82rem; color: var(--muted); margin-top: 14px; }
+
+  .edu .item { margin-bottom: 14px; }
+  .edu .item:last-child { margin-bottom: 0; }
+
+  .cta { background: linear-gradient(135deg, var(--azure-deep), var(--azure)); color: #fff; border-left: none; text-align: center; padding: 40px 28px; }
+  .cta p { max-width: 520px; margin: 8px auto 20px; opacity: .95; }
+  .cta .btn { background: #fff; color: var(--azure-dark); }
+  .cta .mail { display: block; margin-top: 14px; font-size: .9rem; color: #fff; opacity: .9; }
+
+  footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 24px; }
+
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.show { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } .btn { transition: none; } }
+  @media (max-width: 600px) { .stats { grid-template-columns: 1fr; margin-top: -20px; } .stat b { font-size: 1.4rem; } section { padding: 22px; } nav strong { font-size: .9rem; } }
+</style>
+</head>
+<body>
+  <nav>
+    <div class="in">
+      <strong>Jamalee Qym Talento</strong>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="in">
+      <p class="eyebrow">Systems Administration &middot; Microsoft Azure &middot; Windows Server</p>
+      <h1>I build and maintain reliable Microsoft infrastructure.</h1>
+      <p class="pitch">Certified Azure Administrator and fourth-year BSIT student, pursuing a career in systems administration across cloud and on-premises environments.</p>
+      <a class="btn" href="mailto:talento.jamaleeqym@dnsc.edu.ph">Email me</a>
+      <div class="badges">
+        <span class="badge">Azure Administrator Associate &middot; AZ-104</span>
+        <span class="badge">Azure Fundamentals &middot; AZ-900</span>
+        <span class="badge next">Next: Windows Server &middot; AZ-802</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><b>2</b><span>Microsoft certifications earned</span></div>
+    <div class="stat"><b>6 months</b><span>from AZ-900 to AZ-104</span></div>
+    <div class="stat"><b>2027</b><span>BSIT graduation</span></div>
+  </div>
+
+  <main>
+    <section class="reveal" id="profile">
+      <h2>Professional Profile</h2>
+      <p class="sub">Who I am and where I'm headed</p>
+      <p>
+        My focus is infrastructure: identity and access, compute, storage, networking,
+        and the PowerShell automation that keeps them consistent. I earned AZ-900 and
+        AZ-104 within months of each other, and I'm now preparing for the Windows Server
+        Administrator Associate (AZ-802) to cover the hybrid side of the job.
+        I'm looking for a systems administration role where I can help deploy, secure,
+        and maintain environments that people can depend on.
+      </p>
+    </section>
+
+    <section class="reveal" id="certifications">
+      <h2>Technical Certifications</h2>
+      <p class="sub">A steady path through the Microsoft administrator track</p>
+      <ul class="timeline">
+        <li>
+          <h3>Azure Fundamentals (AZ-900)</h3>
+          <div class="meta"><span class="status done">Earned</span> April 2026 &middot; Microsoft</div>
+        </li>
+        <li>
+          <h3>Azure Administrator Associate (AZ-104)</h3>
+          <div class="meta"><span class="status done">Earned</span> September 2026 &middot; Microsoft</div>
+        </li>
+        <li class="next">
+          <h3>Windows Server Administrator Associate (AZ-802)</h3>
+          <div class="meta"><span class="status">In preparation</span> On-premises and hybrid Windows Server administration</div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="reveal" id="skills">
+      <h2>Technical Skills</h2>
+      <p class="sub">Grouped by area of administration</p>
+      <div class="group">
+        <h3>Azure Administration</h3>
+        <div class="tags">
+          <span class="cert">Microsoft Entra ID</span>
+          <span class="cert">Azure RBAC &amp; Policy</span>
+          <span class="cert">Virtual Machines</span>
+          <span class="cert">Storage Accounts</span>
+          <span class="cert">Virtual Networking</span>
+          <span class="cert">Azure Monitor &amp; Backup</span>
+        </div>
+      </div>
+      <div class="group">
+        <h3>Windows Server &amp; Hybrid Infrastructure</h3>
+        <div class="tags">
+          <span>Windows Server</span>
+          <span>Active Directory Domain Services</span>
+          <span>Hyper-V</span>
+        </div>
+      </div>
+      <div class="group">
+        <h3>Scripting &amp; Operating Systems</h3>
+        <div class="tags">
+          <span>PowerShell</span>
+          <span>Linux</span>
+        </div>
+      </div>
+      <p class="legend">&#10003; Validated by the AZ-104 certification</p>
+    </section>
+
+    <section class="reveal edu" id="education">
+      <h2>Education</h2>
+      <p class="sub">Academic background</p>
+      <div class="item">
+        <h3>Bachelor of Science in Information Technology</h3>
+        <div class="meta">Davao del Norte State College &middot; Expected graduation 2027</div>
+      </div>
+      <div class="item">
+        <h3>Senior High School</h3>
+        <div class="meta">North Davao Colleges &middot; 2022 &ndash; 2023</div>
+      </div>
+    </section>
+
+    <section class="reveal cta" id="contact">
+      <h2>Let's talk</h2>
+      <p>Open to internship and entry-level systems administration opportunities. I reply to every message.</p>
+      <a class="btn" href="mailto:talento.jamaleeqym@dnsc.edu.ph">Send me an email</a>
+      <a class="mail" href="mailto:talento.jamaleeqym@dnsc.edu.ph">talento.jamaleeqym@dnsc.edu.ph</a>
+    </section>
+  </main>
+
+  <footer>&copy; 2026 Jamalee Qym Talento</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+  } else {
+    els.forEach(el => el.classList.add('show'));
+  }
+</script>
+</body>
+</html>
